@@ -32,7 +32,7 @@ class OneBox extends Component {
             <div className={"match-ui animated " + this.state.animateOut} id="1" refs="Match1">
                 <div className="info">
                    <div className="short-info">
-                       "{this.props.data.headline}"
+                       <p>"{this.props.data.headline}"</p>
                    </div>
                    <div className="row justify-content-between">
                        <div className="name col-8">
@@ -50,6 +50,7 @@ class OneBox extends Component {
                    </p>
                {this.state.showDetails ? 
                    <span>
+                       <hr />
                        <p>Looking for: {this.props.data.fundReq} for {this.props.data.fundTime}</p>
                        <p>Dilution: {this.props.data.dilution}</p>
                        <p>Location: {this.props.data.location}</p>
@@ -58,6 +59,9 @@ class OneBox extends Component {
                        <p>Number of Users: {this.props.data.users}</p>
                        <p>Any Previous Fundings: {this.props.data.prevFund ? "Yes" : "No"}</p>
                        <p>Type of Firm: {this.props.data.firmType}</p>
+                       <hr />
+                       <p onClick="" className="report-btn">Report Startup</p>
+                       <hr />
                    </span>
                  : null }
                </div>

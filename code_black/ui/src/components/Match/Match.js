@@ -9,8 +9,9 @@ class Match extends Component {
         profiles: [
             {
                 name: "Encury",
-                headline: "Tinder Like App For Funding. Investors and Startups can match using easy swiping UI.",
+                headline: "We're a startup based in udaipur, ja gande're a startup based in udaipur, ja gande're a startup based in udaipur, ja gande're a startup based in udaipur, ja gande're a startup based in udaipur, ja gande're a starasdjsdhgajsdgasjagsh",
                 bio: "We are XYZ",
+                website: "www.encury.com",
                 fundReq: "1,000,000",
                 fundTime: "11 months",
                 dilution: "25%",
@@ -24,6 +25,7 @@ class Match extends Component {
                 name: "Encury",
                 headline: "ajda",
                 bio: "We are XYZ",
+                website: "www.encury.com",
                 fundReq: "1,000,000",
                 fundTime: "11 months",
                 dilution: "25%",
