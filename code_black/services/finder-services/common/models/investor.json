@@ -23,14 +23,12 @@
       "required": true
     },
     "minROI": {
-      "type": "number",
-      "required": true
+      "type": "number"
     },
     "bracketInvestment": {
       "type": [
         "number"
-      ],
-      "required": true
+      ]
     }
   },
   "validations": [],
