@@ -24,9 +24,9 @@ export const authFail = (error) => {
 export const auth = (email, password) => {
     return dispatch => {
         dispatch(authStart());
-        axios.post('api-staging.dajshkajdh.com', {
+        axios.post('http://159.65.158.4:3001/api/StartUps/login', {
             email: email,
-            pass: password
+            password: password
         }).then(response => {
                 const exprDate = new Date(new Date().getTime() + 3600000);
                 localStorage.setItem('token', response.data.token);

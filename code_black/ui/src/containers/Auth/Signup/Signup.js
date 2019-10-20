@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 import './Signup.css';
-import { isNullOrUndefined } from 'util';
 
 class Signup extends Component {
 
@@ -18,6 +18,8 @@ class Signup extends Component {
         stage: null,
         businessModel: null,
         users: 0,
+        burn: null,
+        revenue: null,
         year1: {
             expenses: null,
             revenue: null
@@ -95,7 +97,112 @@ class Signup extends Component {
             users: event.target.value
         })
     }
+
+    handleBurnChange = event => {
+        this.setState({
+            burn: event.target.value
+        })
+    }
+
+    handleRevenueChange = event => {
+        this.setState({
+            revenue: event.target.value
+        })
+    }
+
+    handleExpense1Change = event => {
+        event.persist();
+        this.setState((prevState, props) => {
+            return {
+                year1: {
+                ...prevState.year1,
+                expenses: event.target.value
+                }
+            }
+        })
+    }
     
+    handleExpense5Change = event => {
+        event.persist();
+        this.setState((prevState, props) => {
+            return {
+                year5: {
+                ...prevState.year5,
+                expenses: event.target.value
+                }
+            }
+        })
+    }
+
+    handleExpense3Change = event => {
+        event.persist();
+        this.setState((prevState, props) => {
+            return {
+                year3: {
+                ...prevState.year3,
+                expenses: event.target.value
+                }
+            }
+        })
+    }
+
+    handleRevenue3Change = event => {
+        event.persist();
+        this.setState((prevState, props) => {
+            return {
+                year3: {
+                ...prevState.year3,
+                revenue: event.target.value
+                }
+            }
+        })
+    }
+    handleRevenue5Change = event => {
+        event.persist();
+        this.setState((prevState, props) => {
+            return {
+                year5: {
+                ...prevState.year5,
+                revenue: event.target.value
+                }
+            }
+        })
+    }
+    handleRevenue1Change = event => {
+        event.persist();
+        this.setState((prevState, props) => {
+            return {
+                year3: {
+                ...prevState.year1,
+                revenue: event.target.value
+                }
+            }
+        })
+    }
+
+    handleFundsChange = event => {
+        this.setState({
+            funds: event.target.value
+        })
+    }
+
+    handleDurationChange = event => {
+        this.setState({
+            duration: event.target.value
+        })
+    }
+
+    handleDurationTypeChange = event => {
+        this.setState({
+            durationType: event.target.value
+        })
+    }
+
+    handleDillusionChange = event => {
+        this.setState({
+            dillusion: event.target.value
+        })
+    }
 
     setUser = user => {
         this.setState({
@@ -121,15 +228,58 @@ class Signup extends Component {
         })
     }
 
+    register = (e) => {
+        e.preventDefault();
+        let dataIs = {
+            'name': this.state.name,
+            'registeredEntity': this.state.entity,
+            'date': '2019-10-20T07:29:35.002Z',
+            'info': this.state.headline,
+            'stage': this.state.stage,
+            'businessModel': this.state.businessModel,
+            'operationArea': this.state.location,
+            'presentFinancials': {
+                burn: this.state.burn,
+                revenue: this.state.revenue
+            },
+            'financialProjections': {
+                year1: this.state.year1,    
+                year3: this.state.year3,
+                year5: this.state.year5 
+            },
+            'fundRequirement': {
+                amount: this.state.funds,
+                duration: this.state.duration,
+                durationType: this.state.durationType,
+                dilution: this.state.dillusion
+            },
+            'email': this.state.email,
+            'password': this.state.password,
+            business: "ss",
+            industry: "ss"
+        };
+
+        console.log(dataIs);
+
+        axios.post('http://159.65.158.4:3001/api/StartUps', dataIs).then(response => {
+            this.setState({
+                step: 6
+            })
+        }).catch(err => {
+            alert('error ' + err);
+        });
+    }
+
     render() {
         return(
             <div className="signupDiv">
                 <h2>Signup</h2>
+                {this.state.step !== 6 ?
                 <div class="progress mb-5 mt-1">
                     <div class="progress-bar" style={{width: 100*this.state.step/5 + "%"}}>Step {this.state.step}/5</div>
-                </div>
+                </div> : null }
                 <form>
-                    {this.state.step !== 1 ? <p onClick={this.goBack} style={{cursor: 'pointer'}}><i className="fa fa-chevron-left"></i> Back</p> : null}
+                    {this.state.step !== 1 && this.state.step !== 6 ? <p onClick={this.goBack} style={{cursor: 'pointer'}}><i className="fa fa-chevron-left"></i> Back</p> : null}
                     {this.state.step === 1 ? <div className="container-fluid">
                         <div className="row">
                             <p className="d-block text-center col-12">Who are you?</p>
@@ -240,7 +390,7 @@ class Signup extends Component {
                                 <div className="col-9">
                                     <div className="form-group mb-3">
                                         <label>Total Expenses: </label>
-                                        <input type="number" className="form-control" id="expense1" placeholder="Eg. 20000" value={this.state.year1.expense} onChange={this.handleExpense1Change} />
+                                        <input type="number" className="form-control" id="expense1" placeholder="Eg. 20000" value={this.state.year1.expenses} onChange={this.handleExpense1Change} />
                                     </div>
                                     <div className="form-group">
                                         <label>Total Revenue: </label>
@@ -255,7 +405,7 @@ class Signup extends Component {
                                 <div className="col-9">
                                     <div className="form-group mb-3">
                                         <label>Total Expenses: </label>
-                                        <input type="number" className="form-control" id="expense3" placeholder="Eg. 20000" value={this.state.year3.expense} onChange={this.handleExpense3Change} />
+                                        <input type="number" className="form-control" id="expense3" placeholder="Eg. 20000" value={this.state.year3.expenses} onChange={this.handleExpense3Change} />
                                     </div>
                                     <div className="form-group">
                                         <label>Total Revenue: </label>
@@ -270,7 +420,7 @@ class Signup extends Component {
                                 <div className="col-9">
                                     <div className="form-group mb-3">
                                         <label for="name">Total Expenses: </label>
-                                        <input type="number" className="form-control" id="expense5" placeholder="Eg. 20000" value={this.state.year5.expense} onChange={this.handleExpense5Change} />
+                                        <input type="number" className="form-control" id="expense5" placeholder="Eg. 20000" value={this.state.year5.expenses} onChange={this.handleExpense5Change} />
                                     </div>
                                     <div className="form-group">
                                         <label>Total Revenue: </label>
@@ -302,20 +452,17 @@ class Signup extends Component {
                                </div>
                            </div>
                             <div className="form-group">
-                                <label>Offered Dillusion:</label>
+                                <label>Offered Dillusion (in %):</label>
                                 <div class="input-group">
-                                    <input type="number" className="form-control" placeholder="Eg. 18" value={this.state.dillusion} onChange={this.handleDillusionChange} />
-                                    <div class="input-group-append">
-                                        <span>%</span>
-                                    </div>
+                                    <input type="number" className="form-control" placeholder="Eg. 20" max="100" value={this.state.dillusion} onChange={this.handleDillusionChange} />
                                 </div>
                             </div>
                            <div className="text-right w-100">
-                           <button className="btn btn-primary" onClick={this.nextStep}>Next</button>
+                           <button className="btn btn-primary" onClick={this.register}>Register</button>
                            </div>
                        </div>
                     : null}
-                    
+                    {this.state.step === 6 ? "You have been registered." : null}
                 </form>
                 <p className="mt-5">Already have an account? <span className="text-primary" onClick={this.props.login}>Login</span></p>
             </div>
