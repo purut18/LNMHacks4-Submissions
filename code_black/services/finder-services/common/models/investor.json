@@ -1,0 +1,64 @@
+{
+  "name": "Investor",
+  "plural": "Investors",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "string",
+      "required": true
+    },
+    "firmName": {
+      "type": "string"
+    },
+    "duration": {
+      "type": "string",
+      "required": true
+    },
+    "minROI": {
+      "type": "number",
+      "required": true
+    },
+    "bracketInvestment": {
+      "type": [
+        "number"
+      ],
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [{
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "find"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "findById"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "deleteById"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "patchAttributes"
+    }
+  ],
+  "methods": {}
+}
