@@ -1,8 +1,42 @@
 import React, { Component } from 'react';
 
 import './Match.css';
+import OneBox from './OneBox/OneBox';
 
 class Match extends Component {
+
+    state = {
+        profiles: [
+            {
+                name: "Encury",
+                headline: "Tinder Like App For Funding. Investors and Startups can match using easy swiping UI.",
+                bio: "We are XYZ",
+                fundReq: "1,000,000",
+                fundTime: "11 months",
+                dilution: "25%",
+                location: "Jaipur",
+                stage: "POC",
+                users: "15,046",
+                prevFund: false,
+                firmType: "LLP"
+            },
+            {
+                name: "Encury",
+                headline: "ajda",
+                bio: "We are XYZ",
+                fundReq: "1,000,000",
+                fundTime: "11 months",
+                dilution: "25%",
+                location: "Jaipur",
+                stage: "POC",
+                users: "15,046",
+                prevFund: false,
+                firmType: "LLP"
+            }
+        ]
+    }
+
+
     render() {
         return(
             <div className="match col-9">
@@ -10,22 +44,8 @@ class Match extends Component {
                     <p>My Profile</p>
                 </header>
                 <main>
-                    <div className="match-ui">
-                         <div className="info">
-                            <div className="short-info">
-                                "Tinder Like App For Funding. Investors and Startups can match using easy swiping UI."
-                            </div>
-                            <div className="row justify-content-between">
-                                <div className="name col-8">
-                                    <span className="name-span">Encury</span>
-                                    <span>Puru Thakkar & Tejas Sharma</span>
-                                </div>
-                                <div className="read-more col-3">
-                                    <img src={'https://cdn0.iconfinder.com/data/icons/flat-round-arrow-arrow-head/512/Red_Arrow_Head_Down-2-512.png'} width="60" height="60" />
-                                </div>
-                            </div>
-                         </div>
-                    </div>
+                    <OneBox data={this.state.profiles[0]} id="1" />
+                    <OneBox data={this.state.profiles[1]} id="2" />
                 </main>
             </div>
         );

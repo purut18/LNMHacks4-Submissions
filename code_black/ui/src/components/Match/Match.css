@@ -9,6 +9,8 @@
     width: 100%;
 }
 .match .match-ui {
+    position: absolute;
+    left: calc(50% - 225px);
     width: 450px;
     margin: 0 auto;
     margin-top: 100px;
@@ -37,4 +39,38 @@
     font-size: 22px;
     display: block;
     padding-bottom: 0px;
+}
+
+.match .match-ui .info .read-more {
+    padding: 0;
+    margin: 0;
+    font-size: 64px;
+    color: rgb(113, 12, 207);
+    text-align: center;
+}
+.match .match-ui .info .read-more i {
+    vertical-align: top;
+}
+
+.match .match-ui .info .read-more {
+    cursor: pointer;
+}
+
+.match .match-ui .buttons .row .col-3 i {
+    color: red;
+    cursor: pointer;
+    font-size: 52px;
+    box-shadow: 0 0 10px #aaa;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 80px;
+    vertical-align: top;
+}
+.match .match-ui .buttons .row .col-3 i:hover  {
+    -moz-transform: scale(0.97);
+    -webkit-transform: scale(0.97);
+    transform: scale(0.97);
+    box-shadow: 0 0 5px #aaa;
 }

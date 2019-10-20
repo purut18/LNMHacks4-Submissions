@@ -8,8 +8,8 @@ import Match from '../../components/Match/Match';
 class Dashboard extends Component {
     render() {
         return(
-            <main class="container-fluid">
-                <div class="row">
+            <main className="container-fluid">
+                <div className="row">
                     <Sidebar />
                     <Match />
                 </div>
