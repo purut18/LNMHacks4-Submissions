@@ -15,7 +15,7 @@ Steps to get the app running:
     npm start
 
 Steps to get the server running:
-1. In the terminal, navigate to the 'finder-services' folder and run the command:
+1. In the terminal, navigate to the 'services/finder-services' folder and run the command:
     npm i
 2. Run the app by then typing the command: 
     node .
