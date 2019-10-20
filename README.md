@@ -1,27 +1,24 @@
-# LNMHacks 4.0 - 19th and 20th October, 2019
- 
-## Submission Procedure
-Read the following steps and guidelines properly for proper submission of your project. Missing out any step or performing it wrongly can lead to unsuccessful submission. 
+# LNMHacks 4.0 - TEAM - code_black
 
-### Step 1
-#### Fork this repository
+The Repository contains two directories under the code_black directory. 
 
-### Step 2
-#### Create a New Folder within the forked repository, with the 'folder name' being your 'team name'
+The folder 'ui' contains the complete front-end application built on React.js
+The folder 'finder-services' contains the complete back-end server logic built on Node.js using the IBM's Open-Source Loopback framework.
 
-## Contents of the folder
-+ The project directory.
-+ The presentation that you will be presenting while presenting your project before the judges.
-+ A text file that contains proper documentation. The documentation should contain:
-    - A description of your project.
-    - The contents of your project directory.
-    - Ways to host your project on the localhost.
-+ The name of the 'pptx' and 'text' files should also be the 'team name'.
+Pre-requisites:
+We are assuming you have the latest version of 'node' and 'npm' installed already.
 
-### People with only hardware solution are required to submit only the 'pptx' and 'text' files. A link to the video demonstration of your working model should also be included in both the files.
+Steps to get the app running:
+1. In the terminal, navigate to the 'ui' folder and run the command:
+    npm i
+2. Run the app by then typing the command: 
+    npm start
 
+Steps to get the server running:
+1. In the terminal, navigate to the 'finder-services' folder and run the command:
+    npm i
+2. Run the app by then typing the command: 
+    node .
 
-### Step 3
-Create a Pull Request only after you have completed the entire project and do not wish to make any further changes. We will not be accepting more than one Pull Request from any team. \
-\
-You can complete your work on the local machine and then upload your project folder in the forked repository and proceed to create a Pull Request.
+The live demo can be viewed online at http://encury.com/finder
+NOTE: Please only open the website as 'http' and not 'https'
