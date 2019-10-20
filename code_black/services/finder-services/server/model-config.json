@@ -39,5 +39,9 @@
   "StartUp": {
     "dataSource": "finderDb",
     "public": true
+  },
+  "Investor": {
+    "dataSource": "finderDb",
+    "public": true
   }
 }

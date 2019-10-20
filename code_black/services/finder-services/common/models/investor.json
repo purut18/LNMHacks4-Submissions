@@ -1,0 +1,40 @@
+{
+  "name": "Investor",
+  "plural": "Investors",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "string",
+      "required": true
+    },
+    "firmName": {
+      "type": "string"
+    },
+    "duration": {
+      "type": "string",
+      "required": true
+    },
+    "minROI": {
+      "type": "number",
+      "required": true
+    },
+    "bracketInvestment": {
+      "type": [
+        "number"
+      ],
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
