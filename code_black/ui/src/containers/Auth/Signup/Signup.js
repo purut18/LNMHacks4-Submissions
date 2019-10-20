@@ -29,7 +29,11 @@ class Signup extends Component {
         year5: {
             expenses: null,
             revenue: null
-        }
+        },
+        funds: null,
+        duration: null,
+        durationType: null,
+        dillusion: null
     }
 
     handleEmailChange = event => {
@@ -225,7 +229,7 @@ class Signup extends Component {
                             </div>
                             <div className="form-group">
                                 <label for="email">Monthly Revenue:</label>
-                                <input type="email" className="form-control" id="revenue" placeholder="Eg. 2000" value={this.state.revenue} onChange={this.handleRevenueChange} />
+                                <input type="number" className="form-control" id="revenue" placeholder="Eg. 2000" value={this.state.revenue} onChange={this.handleRevenueChange} />
                             </div>
                             <p className="font-weight-bold">Financial Projections</p>
                             <hr />
@@ -281,63 +285,31 @@ class Signup extends Component {
                     : null}
                     {this.state.step === 5 && this.state.user === 2 ?  
                         <div>
-                           <p className="font-weight-bold">Present Finances</p>
-                           <hr />
                            <div className="form-group mb-3">
-                               <label for="name">Monthly Burn:</label>
-                               <input type="number" className="form-control" id="burn" placeholder="Eg. 2000" value={this.state.burn} onChange={this.handleBurnChange} />
+                               <label for="name">Funds Required: (in $)</label>
+                               <input type="number" className="form-control" placeholder="Eg. 2000" value={this.state.funds} onChange={this.handleFundsChange} />
                            </div>
                            <div className="form-group">
-                               <label for="email">Monthly Revenue:</label>
-                               <input type="email" className="form-control" id="revenue" placeholder="Eg. 2000" value={this.state.revenue} onChange={this.handleRevenueChange} />
-                           </div>
-                           <p className="font-weight-bold">Financial Projections</p>
-                           <hr />
-                           <div className="row">
-                               <div className="col-3 border-left font-weight-bold">
-                                   <p>1st  Year</p>
-                               </div>
-                               <div className="col-9">
-                                   <div className="form-group mb-3">
-                                       <label>Total Expenses: </label>
-                                       <input type="number" className="form-control" id="expense1" placeholder="Eg. 20000" value={this.state.year1.expense} onChange={this.handleExpense1Change} />
-                                   </div>
-                                   <div className="form-group">
-                                       <label>Total Revenue: </label>
-                                       <input type="number" className="form-control" id="revenue1" placeholder="Eg. 20000" value={this.state.year1.revenue} onChange={this.handleRevenue1Change} />
-                                   </div>
+                               <label for="email">Required for:</label>
+                               <div class="input-group">
+                                    <input type="number" className="form-control" placeholder="Eg. 18" value={this.state.duration} onChange={this.handleDurationChange} />
+                                    <div class="input-group-append">
+                                        <select className="form-control custom-select" value={this.state.durationType} onChange={this.handleDurationTypeChange}>
+                                            <option>Month(s)</option>
+                                            <option>Year(s)</option>
+                                        </select>
+                                    </div>
                                </div>
                            </div>
-                           <div className="row">
-                               <div className="col-3 border-left font-weight-bold">
-                                   <p>3rd  Year</p>
-                               </div>
-                               <div className="col-9">
-                                   <div className="form-group mb-3">
-                                       <label>Total Expenses: </label>
-                                       <input type="number" className="form-control" id="expense3" placeholder="Eg. 20000" value={this.state.year3.expense} onChange={this.handleExpense3Change} />
-                                   </div>
-                                   <div className="form-group">
-                                       <label>Total Revenue: </label>
-                                       <input type="number" className="form-control" id="revenue3" placeholder="Eg. 20000" value={this.state.year3.revenue} onChange={this.handleRevenu3Change} />
-                                   </div>
-                               </div>
-                           </div>
-                           <div className="row">
-                               <div className="col-3 border-left font-weight-bold">
-                                   <p>5th  Year</p>
-                               </div>
-                               <div className="col-9">
-                                   <div className="form-group mb-3">
-                                       <label for="name">Total Expenses: </label>
-                                       <input type="number" className="form-control" id="expense5" placeholder="Eg. 20000" value={this.state.year5.expense} onChange={this.handleExpense5Change} />
-                                   </div>
-                                   <div className="form-group">
-                                       <label>Total Revenue: </label>
-                                       <input type="number" className="form-control" id="revenue5" placeholder="Eg. 20000" value={this.state.year5.revenue} onChange={this.handleRevenue5Change} />
-                                   </div>
-                               </div>
-                           </div>
+                            <div className="form-group">
+                                <label>Offered Dillusion:</label>
+                                <div class="input-group">
+                                    <input type="number" className="form-control" placeholder="Eg. 18" value={this.state.dillusion} onChange={this.handleDillusionChange} />
+                                    <div class="input-group-append">
+                                        <span>%</span>
+                                    </div>
+                                </div>
+                            </div>
                            <div className="text-right w-100">
                            <button className="btn btn-primary" onClick={this.nextStep}>Next</button>
                            </div>
