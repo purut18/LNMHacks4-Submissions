@@ -22,3 +22,7 @@ Steps to get the server running:
 
 The live demo can be viewed online at http://encury.com/finder
 NOTE: Please only open the website as 'http' and not 'https'
+      Demo login creds: 
+      id: puru@gmail.com    pass: 123456789
+
+Although the backend features are completed, the integrations with the APIs is still left, so the app currently shows sample data (login and signup are working fine)
