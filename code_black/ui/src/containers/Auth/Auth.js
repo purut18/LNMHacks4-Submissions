@@ -16,11 +16,17 @@ class Auth extends Component {
         });
     }
 
+    login = () => {
+        this.setState({
+            login: true
+        });
+    }
+
     render() {
         return(
             <div className="auth">
                 <header>Finder</header>
-        { this.state.login ? <Login register={this.register} /> : <Signup /> }
+        { this.state.login ? <Login register={this.register} /> : <Signup login={this.login} /> }
             </div>
         );
     }

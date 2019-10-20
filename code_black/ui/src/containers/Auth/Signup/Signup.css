@@ -1,10 +1,25 @@
 .signupDiv {
     width: 400px;
     padding: 20px;
+    padding-bottom: 5px;
     margin: 50px auto;
     box-shadow: 0 0 5px #aaaaaa;
 }
 .signupDiv h2 {
-    margin-bottom: 20px;
+    font-size: 30px;
+    text-align: center;
     font-weight: normal;
+}
+
+.signupDiv .headp {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.signupDiv .container-fluid .row .col-4 {
+    cursor: pointer;
+}
+
+p.mt-5 {
+    cursor: pointer;
 }
