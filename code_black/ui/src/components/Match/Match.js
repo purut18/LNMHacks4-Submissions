@@ -23,11 +23,11 @@ class Match extends Component {
             },
             {
                 name: "Encury",
-                headline: "We're a startup based in udaipur, ja gande're a startup based in udaipur, ja gande're a startup based in udaipur, ja gande're a startup based in udaipur, ja gande're a startup based in udaipur, ja gande're a starasdjsdhgajsdgasjagsh",
-                bio: "We are XYZ",
+                headline: "A tinder based app for funding. Investors and Startups can find each other easily through this UI.",
+                bio: "We are passionate about building products for the future and this product will solve problems people rarely acknoledge.",
                 website: "www.encury.com",
                 fundReq: "1,000,000",
-                fundTime: "11 months",
+                fundTime: "2 Year(s)",
                 dilution: "25%",
                 location: "Jaipur",
                 stage: "POC",
@@ -46,8 +46,11 @@ class Match extends Component {
                     <p>My Profile</p>
                 </header>
                 <main>
-                    <OneBox data={this.state.profiles[0]} id="1" />
-                    <OneBox data={this.state.profiles[1]} id="2" />
+                    {this.state.profiles.map((value, key) => {
+                        return (
+                            <OneBox data={this.state.profiles[key]} key={key} />
+                        );
+                    })}
                 </main>
             </div>
         );

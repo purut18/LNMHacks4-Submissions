@@ -29,8 +29,7 @@ export const auth = (email, password) => {
             password: password
         }).then(response => {
                 const exprDate = new Date(new Date().getTime() + 3600000);
-                localStorage.setItem('token', response.data.token);
-                localStorage.setItem('exprDate', exprDate);
+                localStorage.setItem('token', response.data.id);
                 dispatch(authSuccess(response.data.token));
         }).catch(err => {
             dispatch(authFail(err + "There was an error, please try again later."));
@@ -40,7 +39,6 @@ export const auth = (email, password) => {
 
 export const logout = () => {
     localStorage.removeItem('token');
-    localStorage.removeItem('exprDate');
     
     return {
         type: actionTypes.LOGOUT
@@ -53,12 +51,7 @@ export const authCheckState = () => {
         if (!token) {
              dispatch(logout());
         } else {
-            const expirationTime = new Date(localStorage.getItem('exprDate'));
-            if(expirationTime > new Date()) {
-                dispatch(authSuccess(token));
-            } else {
-                dispatch(logout());
-            }
+            dispatch(authSuccess(token));
         }
     };
 };
