@@ -9,6 +9,10 @@ import Dashboard from './containers/Dashboard/Dashboard';
 import Auth from './containers/Auth/Auth';
 
 class App extends Component {  
+  componentDidMount() {
+    this.props.onTryAuthSignup();
+  }
+
   
   render() {
 

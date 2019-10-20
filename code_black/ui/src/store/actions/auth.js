@@ -28,7 +28,6 @@ export const auth = (email, password) => {
             email: email,
             password: password
         }).then(response => {
-                const exprDate = new Date(new Date().getTime() + 3600000);
                 localStorage.setItem('token', response.data.id);
                 dispatch(authSuccess(response.data.token));
         }).catch(err => {
@@ -48,6 +47,7 @@ export const logout = () => {
 export const authCheckState = () => {
     return dispatch => {
         const token = localStorage.getItem('token');
+        console.log(token);
         if (!token) {
              dispatch(logout());
         } else {
