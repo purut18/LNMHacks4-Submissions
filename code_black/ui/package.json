@@ -2,6 +2,7 @@
   "name": "ui",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://www.encury.com/finder",
   "dependencies": {
     "axios": "^0.19.0",
     "react": "^16.10.2",

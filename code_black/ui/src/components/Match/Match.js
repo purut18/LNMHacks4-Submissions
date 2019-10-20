@@ -9,7 +9,7 @@ class Match extends Component {
         profiles: [
             {
                 name: "Encury",
-                headline: "We're a startup based in udaipur, ja gande're a startup based in udaipur, ja gande're a startup based in udaipur, ja gande're a startup based in udaipur, ja gande're a startup based in udaipur, ja gande're a starasdjsdhgajsdgasjagsh",
+                headline: "ajda",
                 bio: "We are XYZ",
                 website: "www.encury.com",
                 fundReq: "1,000,000",
@@ -23,7 +23,7 @@ class Match extends Component {
             },
             {
                 name: "Encury",
-                headline: "ajda",
+                headline: "We're a startup based in udaipur, ja gande're a startup based in udaipur, ja gande're a startup based in udaipur, ja gande're a startup based in udaipur, ja gande're a startup based in udaipur, ja gande're a starasdjsdhgajsdgasjagsh",
                 bio: "We are XYZ",
                 website: "www.encury.com",
                 fundReq: "1,000,000",
