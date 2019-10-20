@@ -1,0 +1,75 @@
+{
+  "name": "StartUp",
+  "plural": "StartUps",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "logo": {
+      "type": "string"
+    },
+    "teamPhoto": {
+      "type": "string"
+    },
+    "registeredEntity": {
+      "type": "string",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "info": {
+      "type": "string",
+      "required": true
+    },
+    "business": {
+      "type": "string",
+      "required": true
+    },
+    "industry": {
+      "type": "string",
+      "required": true
+    },
+    "stage": {
+      "type": "string",
+      "required": true
+    },
+    "website": {
+      "type": "string"
+    },
+    "businessModel": {
+      "type": "string",
+      "required": true
+    },
+    "bio": {
+      "type": "string"
+    },
+    "operationArea": {
+      "type": "object",
+      "required": true
+    },
+    "presentFinancials": {
+      "type": "object",
+      "required": true
+    },
+    "financialProjections": {
+      "type": "object",
+      "required": true
+    },
+    "fundRequirement": {
+      "type": "object",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

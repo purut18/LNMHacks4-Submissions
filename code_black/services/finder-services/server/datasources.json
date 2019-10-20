@@ -2,5 +2,16 @@
   "db": {
     "name": "db",
     "connector": "memory"
+  },
+  "finderDb": {
+    "host": "localhost",
+    "port": 27017,
+    "url": "",
+    "database": "finderDb",
+    "password": "",
+    "name": "finderDb",
+    "user": "",
+    "useNewUrlParser": true,
+    "connector": "mongodb"
   }
 }
